@@ -1,0 +1,396 @@
+@import "tailwindcss";
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+  --background: #020202;
+  --foreground: #ffffff;
+  --purple: #8b5cf6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #020202;
+  color: white;
+  font-family: var(--font-geist-sans);
+}
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+main {
+  position: relative;
+  z-index: 10;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 42px;
+
+  border-radius: 9999px;
+
+  font-weight: 700;
+
+  color: white;
+
+  background: linear-gradient(
+    135deg,
+    #a855f7,
+    #7c3aed
+  );
+
+  transition: all 0.35s ease;
+
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.45);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.7);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 42px;
+
+  border-radius: 9999px;
+
+  border: 1px solid #7c3aed;
+
+  color: white;
+
+  transition: all 0.35s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(124, 58, 237, 0.12);
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #d8b4fe,
+    #8b5cf6
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================================================
+   GLASS CARD
+========================================================= */
+
+.glass-card {
+  background: rgba(10, 10, 10, 0.55);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(168, 85, 247, 0.25);
+
+  box-shadow:
+    0 0 40px rgba(124, 58, 237, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+
+  transition: all 0.35s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #a855f7;
+
+  box-shadow:
+    0 0 60px rgba(168, 85, 247, 0.28);
+}
+
+/* =========================================================
+   DNA BACKGROUND
+========================================================= */
+
+.dna-left,
+.dna-right{
+    opacity:.14;
+    filter:
+  drop-shadow(0 0 12px rgba(168,85,247,.35))
+  drop-shadow(0 0 40px rgba(168,85,247,.18));
+    will-change:transform;
+}
+
+.dna-left{
+    animation:dnaUp 20s linear infinite;
+}
+
+.dna-right{
+    animation:dnaDown 22s linear infinite;
+}
+
+@keyframes dnaUp{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-220px);
+    }
+
+}
+
+@keyframes dnaDown{
+
+    from{
+        transform:translateY(-220px);
+    }
+
+    to{
+        transform:translateY(0);
+    }
+
+}
+/* =========================================================
+   FLOATING PARTICLES
+========================================================= */
+
+.particles {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.22;
+
+  background-image:
+    radial-gradient(circle, rgba(168,85,247,.9) 1px, transparent 1px);
+
+  background-size: 120px 120px;
+
+  animation: particleMove 70s linear infinite;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes dnaLeft {
+
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(-450px);
+  }
+
+}
+
+@keyframes dnaRight {
+
+  from {
+    transform: scaleX(-1) translateY(0px);
+  }
+
+  to {
+    transform: scaleX(-1) translateY(450px);
+  }
+
+}
+
+@keyframes particleMove {
+
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 450px;
+  }
+
+}
+
+@keyframes pulseSlow {
+
+  0% {
+    opacity: .35;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: .7;
+    transform: scale(1.08);
+  }
+
+  100% {
+    opacity: .35;
+    transform: scale(1);
+  }
+
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 12s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-18px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+
+}
+
+.float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+
+  0% {
+    opacity: .5;
+    transform: scale(.96);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: .5;
+    transform: scale(.96);
+  }
+
+}
+
+.pulse-glow {
+  animation: pulseGlow 5s ease-in-out infinite;
+}
+@keyframes dnaBreath {
+
+  0%{
+    opacity:.12;
+  }
+
+  50%{
+    opacity:.18;
+  }
+
+  100%{
+    opacity:.12;
+  }
+
+}
+
+.dna-left,
+.dna-right{
+  animation-name:
+    dnaUp,
+    dnaBreath;
+}
+.dna-left {
+  animation: dnaLeft 28s ease-in-out infinite alternate;
+}
+
+.dna-right {
+  animation: dnaRight 34s ease-in-out infinite alternate;
+}
+
+@keyframes dnaLeft {
+  0% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-70px) rotate(2deg);
+  }
+
+  100% {
+    transform: translateY(-140px) rotate(-2deg);
+  }
+}
+
+@keyframes dnaRight {
+  0% {
+    transform: translateY(-140px) rotate(2deg);
+  }
+
+  50% {
+    transform: translateY(-60px) rotate(-2deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(2deg);
+  }
+}
+@keyframes dnaMove {
+  0% {
+    transform: translateY(-50%) translateX(0px);
+  }
+
+  50% {
+    transform: translateY(calc(-50% + 40px)) translateX(15px);
+  }
+
+  100% {
+    transform: translateY(-50%) translateX(0px);
+  }
+}
+
+@keyframes dnaMoveReverse {
+  0% {
+    transform: translateY(-50%) translateX(0px);
+  }
+
+  50% {
+    transform: translateY(calc(-50% - 40px)) translateX(-15px);
+  }
+
+  100% {
+    transform: translateY(-50%) translateX(0px);
+  }
+}
+
+.animate-dna {
+  animation: dnaMove 24s ease-in-out infinite;
+}
+
+.animate-dna-reverse {
+  animation: dnaMoveReverse 28s ease-in-out infinite;
+}
