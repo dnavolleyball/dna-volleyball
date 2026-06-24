@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const links = [
@@ -63,52 +62,32 @@ export default function Navbar() {
           max-w-7xl
           items-center
           justify-between
-          px-6
-          md:px-8
+          px-8
           transition-all
           duration-500
 
           ${
             scrolled
-              ? "py-3"
-              : "py-5"
+              ? "py-4"
+              : "py-6"
           }
         `}
       >
         <a
           href="#hero"
-          aria-label="DNA Volleyball home"
           className="
-            group
-            flex
-            items-center
-            transition-transform
+            text-2xl
+            font-black
+            tracking-[0.25em]
+            transition-all
             duration-300
             hover:scale-105
           "
         >
-          <Image
-            src="/logo.png"
-            alt="DNA Volleyball"
-            width={220}
-            height={120}
-            priority
-            className={`
-              h-auto
-              w-[90px]
-              md:w-[115px]
-              lg:w-[125px]
-              transition-all
-              duration-500
-              drop-shadow-[0_0_18px_rgba(168,85,247,.32)]
-
-              ${
-                scrolled
-                  ? "scale-90"
-                  : "scale-100"
-              }
-            `}
-          />
+          <span className="text-purple-400">
+            DNA
+          </span>{" "}
+          Volleyball
         </a>
 
         <nav className="hidden md:flex items-center gap-12">
