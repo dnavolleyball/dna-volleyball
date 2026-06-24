@@ -54,6 +54,14 @@ export const metadata: Metadata = {
     siteName: "DNA Volleyball",
     locale: "en_CA",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "DNA Volleyball - Premium Athlete Development in Durham Region, Ontario",
+      },
+    ],
   },
 
   twitter: {
@@ -61,6 +69,7 @@ export const metadata: Metadata = {
     title: "DNA Volleyball | Athlete Development in Durham Region",
     description:
       "Premium volleyball athlete development programs in Durham Region, Ontario. Develop. Train. Evolve. Compete.",
+    images: ["/og-image.png"],
   },
 
   robots: {
@@ -81,6 +90,7 @@ export default function RootLayout({
     >
       <body className="text-white">
         <GoogleAnalytics />
+
         {/* BackgroundDNA temporarily disabled */}
         {/* <BackgroundDNA /> */}
 
