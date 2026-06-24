@@ -1,12 +1,11 @@
+import { Mail, MapPin, Camera } from "lucide-react";
+
 export default function Contact() {
   return (
     <section
       id="contact"
       className="relative overflow-hidden py-32"
     >
-      {/* Section Overlay */}
-      
-
       {/* Background Glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -14,106 +13,141 @@ export default function Contact() {
             absolute
             left-1/2
             top-1/2
-            h-[650px]
-            w-[650px]
+            h-[700px]
+            w-[700px]
             -translate-x-1/2
             -translate-y-1/2
             rounded-full
-            bg-purple-700/10
-            blur-[180px]
+            bg-purple-600/10
+            blur-[190px]
           "
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-5xl px-8 text-center">
-
-        {/* Heading */}
+      <div className="relative z-10 mx-auto max-w-6xl px-8 text-center">
 
         <p className="mb-4 uppercase tracking-[8px] text-purple-400">
-          Contact
+          Start Your Journey
         </p>
 
-        <h2 className="text-5xl font-black md:text-6xl">
-          Start Your
+        <h2 className="text-5xl font-black leading-tight md:text-7xl">
+          Ready to Unlock
           <span className="block gradient-text">
-            Volleyball Journey
+            Your Volleyball DNA?
           </span>
         </h2>
 
-        <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-gray-300">
-          Whether your athlete is taking their first step into volleyball
-          or preparing for the next competitive level, we'd love to help
-          find the right development pathway.
+        <p className="mx-auto mt-8 max-w-3xl text-xl leading-10 text-gray-300">
+          Whether your athlete is beginning their volleyball journey or
+          preparing for the next competitive level, DNA Volleyball provides
+          the environment, coaching, and development pathway to help them grow.
         </p>
 
-        {/* Contact Card */}
+        {/* CTA Buttons */}
+        <div className="mt-12 flex flex-wrap justify-center gap-6">
 
-        <div className="glass-card mt-20 rounded-[32px] p-12">
+          <a
+            href="mailto:info@dnavolleyball.ca"
+            className="btn-primary"
+          >
+            Contact DNA Volleyball
+          </a>
 
-          <h3 className="text-3xl font-bold">
-            Ready to Unlock Your Athlete's DNA?
-          </h3>
+          <a
+            href="https://instagram.com/dnavolleyball"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+          >
+            Follow @dnavolleyball
+          </a>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-400">
-            Follow us on Instagram for training updates, program
-            announcements, athlete highlights, or reach out directly
-            to learn more about our athlete development programs.
-          </p>
+        </div>
 
-          {/* Button */}
+        {/* Contact Details */}
+        <div className="mx-auto mt-20 max-w-md space-y-8">
 
-          <div className="mt-10 flex justify-center">
+          {/* Email */}
+          <div className="flex items-center justify-center gap-5">
+
+            <div
+              className="
+                flex h-14 w-14 items-center justify-center
+                rounded-full
+                border border-purple-500/40
+                bg-purple-500/10
+              "
+            >
+              <Mail
+                size={24}
+                strokeWidth={1.8}
+                className="text-purple-300"
+              />
+            </div>
+
+            <a
+              href="mailto:info@dnavolleyball.ca"
+              className="text-lg text-gray-200 hover:text-purple-300 transition"
+            >
+              info@dnavolleyball.ca
+            </a>
+
+          </div>
+
+          <div className="mx-auto h-px w-16 bg-purple-500/30" />
+
+          {/* Location */}
+          <div className="flex items-center justify-center gap-5">
+
+            <div
+              className="
+                flex h-14 w-14 items-center justify-center
+                rounded-full
+                border border-purple-500/40
+                bg-purple-500/10
+              "
+            >
+              <MapPin
+                size={24}
+                strokeWidth={1.8}
+                className="text-purple-300"
+              />
+            </div>
+
+            <p className="text-lg text-gray-300">
+              Durham Region, Ontario
+            </p>
+
+          </div>
+
+          <div className="mx-auto h-px w-16 bg-purple-500/30" />
+
+          {/* Instagram */}
+          <div className="flex items-center justify-center gap-5">
+
+            <div
+              className="
+                flex h-14 w-14 items-center justify-center
+                rounded-full
+                border border-purple-500/40
+                bg-purple-500/10
+              "
+            >
+              <Camera
+                size={24}
+                strokeWidth={1.8}
+                className="text-purple-300"
+              />
+            </div>
 
             <a
               href="https://instagram.com/dnavolleyball"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
+              className="text-lg font-semibold text-purple-300 hover:text-purple-200 transition"
             >
-              Follow @dnavolleyball
+              @dnavolleyball
             </a>
-
-          </div>
-
-          {/* Divider */}
-
-          <div className="mx-auto mt-14 h-px w-28 bg-purple-700" />
-
-          {/* Contact Info */}
-
-          <div className="mt-14 grid gap-10 md:grid-cols-2">
-
-            <div>
-
-              <div className="text-4xl">
-                📧
-              </div>
-
-              <h4 className="mt-4 text-xl font-bold">
-                Email
-              </h4>
-
-              <p className="mt-3 text-gray-400">
-                info@dnavolleyball.ca
-              </p>
-
-            </div>
-
-            <div>
-
-              <div className="text-4xl">
-                📍
-              </div>
-
-              <h4 className="mt-4 text-xl font-bold">
-                Location
-              </h4>
-
-              <p className="mt-3 text-gray-400">
-                Durham Region, Ontario
-              </p>
-
-            </div>
 
           </div>
 

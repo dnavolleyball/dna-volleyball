@@ -1,121 +1,121 @@
 import Image from "next/image";
+import { Activity, Target, Sparkles } from "lucide-react";
 
 export default function Founder() {
   return (
-    <section
-      id="founder"
-      className="relative overflow-hidden py-32"
-    >
-      {/* Section Overlay */}
-      
+    <section id="founder" className="relative overflow-hidden py-24">
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-20 px-8 lg:grid-cols-2">
+        <div className="flex justify-center lg:justify-start">
+          <div className="relative max-w-[460px]">
+            <div className="absolute -inset-6 rounded-3xl bg-purple-600/10 blur-[90px]" />
 
-      {/* Background Glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div
-          className="
-            absolute
-            right-0
-            top-1/2
-            h-[700px]
-            w-[700px]
-            -translate-y-1/2
-            rounded-full
-            bg-purple-700/10
-            blur-[180px]
-          "
-        />
-      </div>
-
-      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-24 px-8 lg:grid-cols-2">
-
-        {/* Image */}
-        <div className="flex justify-center">
-
-          <div className="relative">
-
-            {/* Image Glow */}
-            <div className="absolute -inset-8 rounded-full bg-purple-600/20 blur-[100px]" />
-
-            <Image
-              src="/founder.jpg"
-              alt="RJ Bernardino"
-              width={520}
-              height={680}
-              priority
-              className="
-                relative
-                rounded-3xl
-                border
-                border-purple-500
-                shadow-[0_0_60px_rgba(147,51,234,0.35)]
-                float-slow
-              "
-            />
-
+            <div className="relative rounded-[2rem] border border-purple-500/40 bg-white/[0.02] p-3 shadow-[0_0_50px_rgba(168,85,247,0.18)]">
+              <Image
+                src="/founder.jpg"
+                alt="RJ Bernardino"
+                width={460}
+                height={600}
+                priority
+                className="rounded-[1.5rem] object-cover float-slow"
+              />
+            </div>
           </div>
-
         </div>
 
-        {/* Content */}
         <div>
-
           <p className="mb-4 uppercase tracking-[8px] text-purple-400">
             Meet Your Coach
           </p>
 
           <h2 className="text-5xl font-black md:text-6xl">
             RJ
-            <span className="block gradient-text">
-              Bernardino
-            </span>
+            <span className="block gradient-text">Bernardino</span>
           </h2>
 
           <p className="mt-4 text-sm font-semibold uppercase tracking-[0.35em] text-purple-300">
             Founder • Head Coach • Athlete Development Specialist
           </p>
 
-          <div className="mt-10 space-y-7 text-lg leading-9 text-gray-300">
-
+          <div className="mt-8 space-y-5 text-lg leading-8 text-gray-300">
             <p>
-              DNA Volleyball was founded to help young athletes unlock
-              their potential through elite coaching, technical
-              excellence, and purposeful athlete development.
+              After years of working with young athletes, I developed a deep
+              appreciation for what volleyball can teach beyond the game itself.
+              The sport creates opportunities to build confidence, discipline,
+              resilience, leadership, and a lifelong love of learning.
             </p>
 
             <p>
-              Every session is carefully designed to develop confidence,
-              discipline, leadership, and the technical skills required
-              to compete at the next level.
+              DNA Volleyball was created to provide a development-focused
+              environment where athletes can progress at their own pace,
+              strengthen their technical foundation, and gain the confidence to
+              compete. Success is important, but lasting growth happens when
+              athletes genuinely understand the game, enjoy the process, and
+              continue striving to improve long after the final point is played.
             </p>
-
-            <p>
-              My mission is simple: create an environment where athletes
-              are challenged, supported, and inspired to become the best
-              version of themselves—both on and off the court.
-            </p>
-
           </div>
 
-          {/* Quote */}
-          <div className="glass-card mt-12 rounded-3xl p-8">
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-2xl border border-purple-500/20 bg-white/[0.03] p-5">
+              <Activity
+                size={26}
+                strokeWidth={1.6}
+                className="mb-4 text-purple-300"
+              />
 
-            <div className="mb-5 text-5xl text-purple-400">
-              "
+              <p className="text-sm font-bold uppercase tracking-[0.25em] text-purple-300">
+                Develop
+              </p>
+
+              <p className="mt-3 text-sm leading-6 text-gray-400">
+                Build strong fundamentals.
+              </p>
             </div>
 
-            <p className="text-2xl italic leading-relaxed text-gray-100">
-              Great athletes aren't born—they're developed through
-              purpose, discipline, and consistent training.
-            </p>
+            <div className="rounded-2xl border border-purple-500/30 bg-purple-500/[0.06] p-5">
+              <Target
+                size={26}
+                strokeWidth={1.6}
+                className="mb-4 text-purple-200"
+              />
 
-            <p className="mt-6 text-lg font-semibold text-purple-400">
-              — RJ Bernardino
-            </p>
+              <p className="text-sm font-bold uppercase tracking-[0.25em] text-purple-200">
+                Train
+              </p>
 
+              <p className="mt-3 text-sm leading-6 text-gray-300">
+                Practice with purpose.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-purple-500/20 bg-white/[0.03] p-5">
+              <Sparkles
+                size={26}
+                strokeWidth={1.6}
+                className="mb-4 text-purple-300"
+              />
+
+              <p className="text-sm font-bold uppercase tracking-[0.25em] text-purple-300">
+                Evolve
+              </p>
+
+              <p className="mt-3 text-sm leading-6 text-gray-400">
+                Grow through challenge.
+              </p>
+            </div>
           </div>
 
-        </div>
 
+          <div className="glass-card mt-8 rounded-3xl p-7">
+            <p className="text-2xl italic leading-relaxed text-gray-100">
+              Great athletes aren't defined by wins alone. They're defined by
+              their commitment to learn, grow, and improve every day.
+            </p>
+
+            <p className="mt-5 text-lg font-semibold text-purple-400">
+              — RJ Bernardino
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

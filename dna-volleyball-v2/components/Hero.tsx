@@ -1,4 +1,6 @@
 import Image from "next/image";
+import InteractiveImage from "@/components/ui/InteractiveImage";
+import StatCard from "@/components/ui/StatCard";
 
 export default function Hero() {
   return (
@@ -6,51 +8,37 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen overflow-hidden"
     >
-      {/* Dark Overlay (matches other sections) */}
-     
-
-      {/* Hero Background Glow */}
       <div className="absolute inset-0 pointer-events-none">
+  <div
+    className="
+      absolute
+      right-[8%]
+      top-[32%]
+      h-[900px]
+      w-[900px]
+      rounded-full
+      bg-purple-500/10
+      blur-[260px]
+      animate-atmosphere
+    "
+  />
 
-        <div
-          className="
-            absolute
-            left-[68%]
-            top-1/2
-            h-[900px]
-            w-[900px]
-            -translate-x-1/2
-            -translate-y-1/2
-            rounded-full
-            bg-purple-700/15
-            blur-[180px]
-          "
-        />
+  <div
+    className="
+      absolute
+      right-[18%]
+      top-[42%]
+      h-[420px]
+      w-[420px]
+      rounded-full
+      bg-violet-400/10
+      blur-[180px]
+    "
+  />
+</div>
 
-        <div
-          className="
-            absolute
-            left-[40%]
-            top-1/3
-            h-[500px]
-            w-[500px]
-            rounded-full
-            bg-purple-500/10
-            blur-[160px]
-          "
-        />
-
-        {/* Bottom Fade Into Programs */}
-        
-
-      </div>
-
-      {/* Main Layout */}
-      <div className="relative z-20 mx-auto flex min-h-screen max-w-7xl items-center px-8">
-
-        {/* LEFT */}
-        <div className="w-full lg:w-[52%]">
-
+      <div className="relative z-20 mx-auto flex min-h-screen max-w-[1600px] items-center px-8 xl:px-16">
+        <div className="relative z-20 w-full lg:w-[45%]">
           <p className="mb-6 uppercase tracking-[8px] text-purple-400">
             Volleyball Development
           </p>
@@ -74,98 +62,53 @@ export default function Hero() {
           </p>
 
           <div className="mt-12 flex flex-wrap gap-6">
-
-            <a
-              href="#programs"
-              className="btn-primary"
-            >
+            <a href="#programs" className="btn-primary">
               View Programs
             </a>
 
-            <a
-              href="#contact"
-              className="btn-secondary"
-            >
+            <a href="#contact" className="btn-secondary">
               Contact
             </a>
-
           </div>
 
           <div className="mt-20 grid max-w-xl grid-cols-3 gap-10">
-
-            <div>
-              <h3 className="text-5xl font-black text-purple-400">
-                200+
-              </h3>
-
-              <p className="mt-2 text-gray-400">
-                Athletes Developed
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-5xl font-black text-purple-400">
-                5+
-              </h3>
-
-              <p className="mt-2 text-gray-400">
-                Years Coaching
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-5xl font-black text-purple-400">
-                3
-              </h3>
-
-              <p className="mt-2 text-gray-400">
-                Development Programs
-              </p>
-            </div>
-
+            <StatCard value="200+" label="Athletes Developed" />
+            <StatCard value="5+" label="Years Coaching" />
+            <StatCard value="3" label="Development Programs" />
           </div>
-
         </div>
 
-        {/* RIGHT */}
-        <div className="relative hidden lg:flex w-[48%] justify-end">
+        <div className="relative hidden lg:flex w-[55%] items-center justify-center overflow-visible">
+          <span className="hero-particle hero-particle-1"></span>
+          <span className="hero-particle hero-particle-2"></span>
+          <span className="hero-particle hero-particle-3"></span>
+          <span className="hero-particle hero-particle-4"></span>
+          <span className="hero-particle hero-particle-5"></span>
+          <span className="hero-particle hero-particle-6"></span>
 
-          {/* Founder Glow */}
-          <div
-            className="
-              absolute
-              right-10
-              top-1/2
-              h-[620px]
-              w-[620px]
-              -translate-y-1/2
-              rounded-full
-              bg-purple-600/20
-              blur-[140px]
-              pulse-glow
-            "
-          />
-
-          {/* Founder */}
-          <Image
-            src="/founder.jpg"
-            alt="RJ Bernardino"
-            width={560}
-            height={700}
-            priority
-            className="
-              relative
-              z-10
-              rounded-3xl
-              border
-              border-purple-700
-              shadow-2xl
-              float-slow
-            "
-          />
-
+          
+          <InteractiveImage>
+            <Image
+              src="/heroimage.png"
+              alt="DNA Volleyball Development"
+              width={1100}
+              height={1100}
+              priority
+              className="
+                relative
+                z-10
+                w-full
+                max-w-[950px]
+                h-auto
+                object-contain
+                float-slow
+                select-none
+                drop-shadow-[0_0_60px_rgba(168,85,247,.25)]
+              "
+            />
+          </InteractiveImage>
+          
         </div>
-
       </div>
     </section>
   );

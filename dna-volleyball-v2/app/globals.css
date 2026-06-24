@@ -14,16 +14,6 @@ html {
   scroll-behavior: smooth;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  background: #020202;
-  color: white;
-  font-family: var(--font-geist-sans);
-}
-
 /* =========================================================
    PAGE
 ========================================================= */
@@ -136,50 +126,6 @@ main {
 }
 
 /* =========================================================
-   DNA BACKGROUND
-========================================================= */
-
-.dna-left,
-.dna-right{
-    opacity:.14;
-    filter:
-  drop-shadow(0 0 12px rgba(168,85,247,.35))
-  drop-shadow(0 0 40px rgba(168,85,247,.18));
-    will-change:transform;
-}
-
-.dna-left{
-    animation:dnaUp 20s linear infinite;
-}
-
-.dna-right{
-    animation:dnaDown 22s linear infinite;
-}
-
-@keyframes dnaUp{
-
-    from{
-        transform:translateY(0);
-    }
-
-    to{
-        transform:translateY(-220px);
-    }
-
-}
-
-@keyframes dnaDown{
-
-    from{
-        transform:translateY(-220px);
-    }
-
-    to{
-        transform:translateY(0);
-    }
-
-}
-/* =========================================================
    FLOATING PARTICLES
 ========================================================= */
 
@@ -198,35 +144,50 @@ main {
 }
 
 /* =========================================================
-   ANIMATIONS
+   DNA ANIMATION
 ========================================================= */
 
-@keyframes dnaLeft {
-
-  from {
+@keyframes dnaMove {
+  0% {
     transform: translateY(0px);
   }
 
-  to {
-    transform: translateY(-450px);
+  50% {
+    transform: translateY(-35px);
   }
 
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-@keyframes dnaRight {
-
-  from {
+@keyframes dnaMoveReverse {
+  0% {
     transform: scaleX(-1) translateY(0px);
   }
 
-  to {
-    transform: scaleX(-1) translateY(450px);
+  50% {
+    transform: scaleX(-1) translateY(35px);
   }
 
+  100% {
+    transform: scaleX(-1) translateY(0px);
+  }
 }
 
-@keyframes particleMove {
+.animate-dna {
+  animation: dnaMove 16s ease-in-out infinite;
+}
 
+.animate-dna-reverse {
+  animation: dnaMoveReverse 18s ease-in-out infinite;
+}
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+@keyframes particleMove {
   from {
     background-position: 0 0;
   }
@@ -234,54 +195,37 @@ main {
   to {
     background-position: 0 450px;
   }
-
 }
 
-@keyframes pulseSlow {
-
-  0% {
-    opacity: .35;
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: .7;
-    transform: scale(1.08);
-  }
-
-  100% {
-    opacity: .35;
-    transform: scale(1);
-  }
-
-}
-
-.animate-pulse-slow {
-  animation: pulseSlow 12s ease-in-out infinite;
-}
+/* =========================================================
+   HERO FLOAT
+========================================================= */
 
 @keyframes floatSlow {
 
-  0% {
-    transform: translateY(0px);
+  0%{
+    transform:translateY(0px);
   }
 
-  50% {
-    transform: translateY(-18px);
+  50%{
+    transform:translateY(-12px);
   }
 
-  100% {
-    transform: translateY(0px);
+  100%{
+    transform:translateY(0px);
   }
 
 }
 
-.float-slow {
-  animation: floatSlow 6s ease-in-out infinite;
+.float-slow{
+  animation:floatSlow 8s ease-in-out infinite;
 }
+
+/* =========================================================
+   PURPLE GLOW
+========================================================= */
 
 @keyframes pulseGlow {
-
   0% {
     opacity: .5;
     transform: scale(.96);
@@ -296,101 +240,290 @@ main {
     opacity: .5;
     transform: scale(.96);
   }
-
 }
 
 .pulse-glow {
   animation: pulseGlow 5s ease-in-out infinite;
+}/* =========================================================
+   FLOATING DNA PARTICLES
+========================================================= */
+
+.particle {
+  position: absolute;
+
+  border-radius: 9999px;
+
+  background: #a855f7;
+
+  opacity: 0.18;
+
+  filter:
+    blur(1px)
+    drop-shadow(0 0 8px rgba(168,85,247,.9));
+
+  animation: floatParticle linear infinite;
 }
-@keyframes dnaBreath {
+
+@keyframes floatParticle {
 
   0%{
-    opacity:.12;
+    transform:
+      translateY(120px)
+      translateX(0px)
+      scale(.8);
+
+    opacity:.08;
+  }
+
+  25%{
+    opacity:.22;
   }
 
   50%{
-    opacity:.18;
+    transform:
+      translateY(-40px)
+      translateX(12px)
+      scale(1);
+  }
+
+  75%{
+    opacity:.30;
   }
 
   100%{
-    opacity:.12;
+    transform:
+      translateY(-220px)
+      translateX(-10px)
+      scale(.8);
+
+    opacity:0;
+  }
+
+}/* =========================================================
+   ATMOSPHERIC BACKGROUND
+========================================================= */
+
+.floating-dust{
+  position:fixed;
+  inset:0;
+
+  background-image:
+    radial-gradient(circle at 20% 25%, rgba(168,85,247,.20) 2px, transparent 3px),
+    radial-gradient(circle at 80% 35%, rgba(192,132,252,.15) 2px, transparent 3px),
+    radial-gradient(circle at 35% 70%, rgba(168,85,247,.16) 3px, transparent 4px),
+    radial-gradient(circle at 70% 80%, rgba(216,180,254,.12) 2px, transparent 3px),
+    radial-gradient(circle at 55% 50%, rgba(168,85,247,.14) 2px, transparent 3px);
+
+  background-size:
+    420px 420px,
+    520px 520px,
+    650px 650px,
+    780px 780px,
+    900px 900px;
+
+  opacity:.35;
+
+  animation:floatingDust 45s linear infinite;
+}
+
+@keyframes floatingDust{
+
+  from{
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+
+  to{
+    background-position:
+      0 -600px,
+      0 -450px,
+      0 -700px,
+      0 -500px,
+      0 -650px;
   }
 
 }
 
-.dna-left,
-.dna-right{
-  animation-name:
-    dnaUp,
-    dnaBreath;
-}
-.dna-left {
-  animation: dnaLeft 28s ease-in-out infinite alternate;
-}
+@keyframes atmosphere{
 
-.dna-right {
-  animation: dnaRight 34s ease-in-out infinite alternate;
-}
-
-@keyframes dnaLeft {
-  0% {
-    transform: translateY(0px) rotate(-2deg);
+  0%{
+    transform:translate(-50%,-50%) scale(1);
   }
 
+  50%{
+    transform:translate(-50%,-50%) scale(1.08);
+  }
+
+  100%{
+    transform:translate(-50%,-50%) scale(1);
+  }
+
+}
+
+.animate-atmosphere{
+  animation:atmosphere 18s ease-in-out infinite;
+}
+
+.animate-atmosphere-slow{
+  animation:atmosphere 28s ease-in-out infinite;
+}
+/* =========================================================
+   HERO PARTICLES
+========================================================= */
+
+.hero-particle{
+    position:absolute;
+    width:6px;
+    height:6px;
+    border-radius:9999px;
+
+    background:#b56dff;
+
+    box-shadow:
+        0 0 10px #b56dff,
+        0 0 25px #b56dff;
+
+    animation:heroFloat 8s ease-in-out infinite;
+}
+
+.hero-particle-1{
+    left:8%;
+    top:18%;
+    animation-delay:0s;
+}
+
+.hero-particle-2{
+    left:78%;
+    top:15%;
+    animation-delay:1s;
+}
+
+.hero-particle-3{
+    left:90%;
+    top:50%;
+    animation-delay:2s;
+}
+
+.hero-particle-4{
+    left:20%;
+    top:78%;
+    animation-delay:3s;
+}
+
+.hero-particle-5{
+    left:68%;
+    top:85%;
+    animation-delay:4s;
+}
+
+.hero-particle-6{
+    left:45%;
+    top:35%;
+    animation-delay:5s;
+}
+
+@keyframes heroFloat{
+
+    0%{
+        transform:translateY(0px) scale(.8);
+        opacity:.15;
+    }
+
+    50%{
+        transform:translateY(-22px) scale(1.2);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(0px) scale(.8);
+        opacity:.15;
+    }
+
+}/* =========================================================
+   HERO ENTRANCE ANIMATIONS
+========================================================= */
+
+@keyframes heroFadeUp {
+
+  from{
+    opacity:0;
+    transform:translateY(28px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+@keyframes heroImageReveal {
+
+  from{
+    opacity:0;
+    transform:translateY(40px) scale(.96);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+
+}
+
+.hero-reveal{
+  opacity:0;
+  animation:heroFadeUp .8s ease forwards;
+}
+
+.hero-delay-1{
+  animation-delay:.15s;
+}
+
+.hero-delay-2{
+  animation-delay:.35s;
+}
+
+.hero-delay-3{
+  animation-delay:.55s;
+}
+
+.hero-delay-4{
+  animation-delay:.75s;
+}
+
+.hero-delay-5{
+  animation-delay:.95s;
+}
+
+.hero-delay-6{
+  animation-delay:1.15s;
+}
+
+.hero-image{
+  opacity:0;
+  animation:heroImageReveal 1.2s cubic-bezier(.22,.61,.36,1) forwards;
+  animation-delay:.45s;
+}@keyframes float {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0px);
+  }
   50% {
-    transform: translateY(-70px) rotate(2deg);
-  }
-
-  100% {
-    transform: translateY(-140px) rotate(-2deg);
+    transform: translateX(-50%) translateY(6px);
   }
 }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 
-@keyframes dnaRight {
-  0% {
-    transform: translateY(-140px) rotate(2deg);
-  }
+  color: white;
+  font-family: var(--font-geist-sans);
 
-  50% {
-    transform: translateY(-60px) rotate(-2deg);
-  }
-
-  100% {
-    transform: translateY(0px) rotate(2deg);
-  }
-}
-@keyframes dnaMove {
-  0% {
-    transform: translateY(-50%) translateX(0px);
-  }
-
-  50% {
-    transform: translateY(calc(-50% + 40px)) translateX(15px);
-  }
-
-  100% {
-    transform: translateY(-50%) translateX(0px);
-  }
-}
-
-@keyframes dnaMoveReverse {
-  0% {
-    transform: translateY(-50%) translateX(0px);
-  }
-
-  50% {
-    transform: translateY(calc(-50% - 40px)) translateX(-15px);
-  }
-
-  100% {
-    transform: translateY(-50%) translateX(0px);
-  }
-}
-
-.animate-dna {
-  animation: dnaMove 24s ease-in-out infinite;
-}
-
-.animate-dna-reverse {
-  animation: dnaMoveReverse 28s ease-in-out infinite;
+  background: #020202;
 }
