@@ -21,8 +21,8 @@ export default function Footer() {
           <Image
             src="/logo.png"
             alt="DNA Volleyball"
-            width={220}
-            height={220}
+            width={320}
+            height={320}
             className="w-[160px] md:w-[190px] drop-shadow-[0_0_35px_rgba(168,85,247,.35)]"
           />
 
