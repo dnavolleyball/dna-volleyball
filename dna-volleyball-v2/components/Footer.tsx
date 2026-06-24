@@ -19,18 +19,28 @@ export default function Footer() {
         <div className="flex flex-col items-center">
 
           <Image
-            src="/logo.png"
-            alt="DNA Volleyball"
-            width={420}
-            height={420}
-            className="w-[160px] md:w-[190px] drop-shadow-[0_0_35px_rgba(168,85,247,.35)]"
-          />
+  src="/logo.png"
+  alt="DNA Volleyball"
+  width={420}
+  height={420}
+  priority
+  className="
+    w-[240px]
+    md:w-[300px]
+    lg:w-[340px]
+    h-auto
+    drop-shadow-[0_0_60px_rgba(168,85,247,.45)]
+    transition-transform
+    duration-500
+    hover:scale-105
+  "
+/>
 
-          <p className="mt-6 text-sm uppercase tracking-[0.45em] text-gray-400 text-center">
+          <p className="mt-8 text-base uppercase tracking-[0.5em] text-gray-300 text-center">
             DEVELOP • TRAIN • EVOLVE
           </p>
 
-          <p className="mt-4 max-w-xl text-center text-gray-500 leading-8">
+          <p className="mt-6 max-w-2xl text-center text-lg text-gray-400 leading-8">
             Building athletes through purposeful training,
             long-term development, and a passion for volleyball.
           </p>
