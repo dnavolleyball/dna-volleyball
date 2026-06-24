@@ -15,8 +15,57 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DNA Volleyball",
-  description: "Unlock Your Volleyball DNA",
+  metadataBase: new URL("https://www.dnavolleyball.ca"),
+
+  title: {
+    default: "DNA Volleyball | Athlete Development in Durham Region",
+    template: "%s | DNA Volleyball",
+  },
+
+  description:
+    "DNA Volleyball provides premium volleyball athlete development programs in Durham Region, Ontario. Develop, train, evolve, and unlock your volleyball DNA.",
+
+  keywords: [
+    "DNA Volleyball",
+    "Durham volleyball",
+    "Durham Region volleyball",
+    "volleyball training Ontario",
+    "youth volleyball training",
+    "volleyball academy Durham",
+    "volleyball athlete development",
+    "volleyball programs Durham Region",
+    "Ontario volleyball training",
+  ],
+
+  authors: [{ name: "DNA Volleyball" }],
+  creator: "DNA Volleyball",
+  publisher: "DNA Volleyball",
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    title: "DNA Volleyball | Athlete Development in Durham Region",
+    description:
+      "Premium volleyball athlete development programs in Durham Region, Ontario. Develop. Train. Evolve. Compete.",
+    url: "https://www.dnavolleyball.ca",
+    siteName: "DNA Volleyball",
+    locale: "en_CA",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "DNA Volleyball | Athlete Development in Durham Region",
+    description:
+      "Premium volleyball athlete development programs in Durham Region, Ontario. Develop. Train. Evolve. Compete.",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -30,12 +79,10 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <body className="text-white">
-
-        {/* BackgroundDNA temporarily disabled for debugging */}
+        {/* BackgroundDNA temporarily disabled */}
         {/* <BackgroundDNA /> */}
 
         {children}
-
       </body>
     </html>
   );
