@@ -1,40 +1,45 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-purple-900/30 bg-zinc-950">
 
-      {/* Background Glow */}
+      {/* Ambient Glow */}
 
       <div className="absolute inset-0 pointer-events-none">
 
-        <div className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-purple-700/10 blur-[120px]" />
+        <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-purple-700/10 blur-[140px]" />
 
       </div>
 
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-8 py-12 md:flex-row">
+      <div className="relative z-10 mx-auto max-w-7xl px-8 py-16">
 
         {/* Logo */}
 
-        <div>
+        <div className="flex flex-col items-center">
 
-          <h2 className="text-3xl font-black tracking-tight">
+          <Image
+            src="/logo.png"
+            alt="DNA Volleyball"
+            width={220}
+            height={220}
+            className="w-[160px] md:w-[190px] drop-shadow-[0_0_35px_rgba(168,85,247,.35)]"
+          />
 
-            <span className="gradient-text">
-              DNA
-            </span>{" "}
+          <p className="mt-6 text-sm uppercase tracking-[0.45em] text-gray-400 text-center">
+            DEVELOP • TRAIN • EVOLVE
+          </p>
 
-            Volleyball
-
-          </h2>
-
-          <p className="mt-2 text-sm tracking-[0.3em] uppercase text-gray-500">
-            Develop Your Volleyball DNA
+          <p className="mt-4 max-w-xl text-center text-gray-500 leading-8">
+            Building athletes through purposeful training,
+            long-term development, and a passion for volleyball.
           </p>
 
         </div>
 
         {/* Navigation */}
 
-        <nav className="flex flex-wrap justify-center gap-8 text-sm uppercase tracking-[0.2em] text-gray-400">
+        <nav className="mt-12 flex flex-wrap justify-center gap-10 text-xs uppercase tracking-[0.25em] text-gray-400">
 
           <a
             href="#hero"
@@ -73,16 +78,20 @@ export default function Footer() {
 
         </nav>
 
-        {/* Copyright */}
+        {/* Divider */}
 
-        <div className="text-center md:text-right">
+        <div className="mt-12 h-px w-full bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
+
+        {/* Bottom */}
+
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 text-center md:flex-row">
 
           <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} DNA Volleyball
+            © {new Date().getFullYear()} DNA Volleyball. All Rights Reserved.
           </p>
 
-          <p className="mt-2 text-xs uppercase tracking-[0.2em] text-gray-600">
-            All Rights Reserved
+          <p className="text-xs uppercase tracking-[0.25em] text-gray-600">
+            Durham Region • Ontario • Canada
           </p>
 
         </div>
