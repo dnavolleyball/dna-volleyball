@@ -95,9 +95,9 @@ export default function Navbar() {
             priority
             className={`
               h-auto
-              w-[150px]
-              md:w-[185px]
-              lg:w-[205px]
+              w-[90px]
+              md:w-[115px]
+              lg:w-[125px]
               transition-all
               duration-500
               drop-shadow-[0_0_18px_rgba(168,85,247,.32)]
