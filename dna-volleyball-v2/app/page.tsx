@@ -1,4 +1,3 @@
-import CursorGlow from "@/components/CursorGlow";
 import Image from "next/image";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
@@ -70,8 +69,6 @@ export default function Home() {
       {/* Background Atmosphere */}
 
       <BackgroundEffects />
-
-<CursorGlow />
 
 <div className="fixed inset-0 -z-10 bg-black/45 pointer-events-none" />
 
