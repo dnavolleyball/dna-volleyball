@@ -78,6 +78,28 @@ export const metadata: Metadata = {
   },
 };
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  name: "DNA Volleyball",
+  alternateName: "Durham Nova Academy",
+  url: "https://www.dnavolleyball.ca",
+  logo: "https://www.dnavolleyball.ca/logo.png",
+  email: "info@dnavolleyball.ca",
+
+  sport: "Volleyball",
+
+  areaServed: {
+    "@type": "AdministrativeArea",
+    name: "Durham Region, Ontario, Canada",
+  },
+
+  sameAs: [
+    "https://www.instagram.com/dnavolleyballca/",
+    "https://book.communiti.app/dnavolleyball",
+  ],
+};;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -90,6 +112,13 @@ export default function RootLayout({
     >
       <body className="text-white">
         <GoogleAnalytics />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
 
         {/* BackgroundDNA temporarily disabled */}
         {/* <BackgroundDNA /> */}

@@ -9,33 +9,33 @@ export default function Hero() {
       className="relative min-h-screen overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none">
-  <div
-    className="
-      absolute
-      right-[8%]
-      top-[32%]
-      h-[900px]
-      w-[900px]
-      rounded-full
-      bg-purple-500/10
-      blur-[260px]
-      animate-atmosphere
-    "
-  />
+        <div
+          className="
+            absolute
+            right-[8%]
+            top-[32%]
+            h-[900px]
+            w-[900px]
+            rounded-full
+            bg-purple-500/10
+            blur-[260px]
+            animate-atmosphere
+          "
+        />
 
-  <div
-    className="
-      absolute
-      right-[18%]
-      top-[42%]
-      h-[420px]
-      w-[420px]
-      rounded-full
-      bg-violet-400/10
-      blur-[180px]
-    "
-  />
-</div>
+        <div
+          className="
+            absolute
+            right-[18%]
+            top-[42%]
+            h-[420px]
+            w-[420px]
+            rounded-full
+            bg-violet-400/10
+            blur-[180px]
+          "
+        />
+      </div>
 
       <div className="relative z-20 mx-auto flex min-h-screen max-w-[1600px] items-center px-8 xl:px-16">
         <div className="relative z-20 w-full lg:w-[45%]">
@@ -62,12 +62,17 @@ export default function Hero() {
           </p>
 
           <div className="mt-12 flex flex-wrap gap-6">
-            <a href="#programs" className="btn-primary">
-              View Programs
+            <a
+              href="https://book.communiti.app/dnavolleyball"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              View Upcoming Sessions
             </a>
 
-            <a href="#contact" className="btn-secondary">
-              Contact
+            <a href="#programs" className="btn-secondary">
+              View Programs
             </a>
           </div>
 
@@ -86,7 +91,6 @@ export default function Hero() {
           <span className="hero-particle hero-particle-5"></span>
           <span className="hero-particle hero-particle-6"></span>
 
-          
           <InteractiveImage>
             <Image
               src="/heroimage.png"
@@ -107,7 +111,6 @@ export default function Hero() {
               "
             />
           </InteractiveImage>
-          
         </div>
       </div>
     </section>
