@@ -3,8 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
-// import BackgroundDNA from "@/components/BackgroundDNA";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -98,7 +96,7 @@ const structuredData = {
     "https://www.instagram.com/dnavolleyballca/",
     "https://book.communiti.app/dnavolleyball",
   ],
-};;
+};
 
 export default function RootLayout({
   children,
@@ -119,10 +117,7 @@ export default function RootLayout({
             __html: JSON.stringify(structuredData),
           }}
         />
-
-        {/* BackgroundDNA temporarily disabled */}
-        {/* <BackgroundDNA /> */}
-
+      
         {children}
       </body>
     </html>

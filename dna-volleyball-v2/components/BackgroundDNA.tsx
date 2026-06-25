@@ -1,51 +1,27 @@
 export default function BackgroundDNA() {
   return (
-    <>
+    <div className="fixed inset-0 z-[2] pointer-events-none overflow-hidden">
       {/* Left DNA */}
-      <div
-        className="
-          fixed
-          top-0
-          left-0
-          h-full
-          w-[500px]
-          pointer-events-none
-          -z-10
-          opacity-20
-          dna-left
-        "
-      >
+      <div className="absolute left-0 top-0 h-full w-[760px] opacity-45">
         <div
           className="absolute inset-0 bg-left bg-repeat-y"
           style={{
             backgroundImage: "url('/dna-background.png')",
-            backgroundSize: "500px auto",
+            backgroundSize: "760px auto",
           }}
         />
       </div>
 
       {/* Right DNA */}
-      <div
-        className="
-          fixed
-          top-0
-          right-0
-          h-full
-          w-[500px]
-          pointer-events-none
-          -z-10
-          opacity-20
-          dna-right
-        "
-      >
+      <div className="absolute right-0 top-0 h-full w-[760px] opacity-45">
         <div
           className="absolute inset-0 bg-right bg-repeat-y"
           style={{
             backgroundImage: "url('/dna-background.png')",
-            backgroundSize: "500px auto",
+            backgroundSize: "760px auto",
           }}
         />
       </div>
-    </>
+    </div>
   );
 }
