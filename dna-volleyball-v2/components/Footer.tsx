@@ -8,7 +8,7 @@ export default function Footer() {
 
       <div className="absolute inset-0 pointer-events-none">
 
-        <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-purple-700/10 blur-[140px]" />
+        <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-purple-700/15 blur-[160px]" />
 
       </div>
 
@@ -19,28 +19,28 @@ export default function Footer() {
         <div className="flex flex-col items-center">
 
           <Image
-  src="/logo.png"
-  alt="DNA Volleyball"
-  width={700}
-  height={700}
-  priority
-  className="
-    w-[300px]
-    md:w-[380px]
-    lg:w-[450px]
-    h-auto
-    drop-shadow-[0_0_80px_rgba(168,85,247,.55)]
-    transition-transform
-    duration-500
-    hover:scale-105
-  "
-/>
+            src="/logo.png"
+            alt="DNA Volleyball"
+            width={1200}
+            height={1200}
+            priority
+            className="
+              w-[320px]
+              md:w-[420px]
+              lg:w-[500px]
+              h-auto
+              drop-shadow-[0_0_80px_rgba(168,85,247,.55)]
+              transition-all
+              duration-500
+              hover:scale-105
+            "
+          />
 
-          <p className="mt-8 text-base uppercase tracking-[0.5em] text-gray-300 text-center">
+          <p className="mt-3 text-sm md:text-base uppercase tracking-[0.45em] text-gray-300 text-center">
             DEVELOP • TRAIN • EVOLVE
           </p>
 
-          <p className="mt-6 max-w-2xl text-center text-lg text-gray-400 leading-8">
+          <p className="mt-4 max-w-2xl text-center text-base md:text-lg leading-8 text-gray-400">
             Building athletes through purposeful training,
             long-term development, and a passion for volleyball.
           </p>
@@ -49,7 +49,7 @@ export default function Footer() {
 
         {/* Navigation */}
 
-        <nav className="mt-12 flex flex-wrap justify-center gap-10 text-xs uppercase tracking-[0.25em] text-gray-400">
+        <nav className="mt-12 flex flex-wrap justify-center gap-8 md:gap-10 text-xs uppercase tracking-[0.25em] text-gray-400">
 
           <a
             href="#hero"
