@@ -21,15 +21,15 @@ export default function Footer() {
           <Image
   src="/logo.png"
   alt="DNA Volleyball"
-  width={420}
-  height={420}
+  width={700}
+  height={700}
   priority
   className="
-    w-[240px]
-    md:w-[300px]
-    lg:w-[340px]
+    w-[300px]
+    md:w-[380px]
+    lg:w-[450px]
     h-auto
-    drop-shadow-[0_0_60px_rgba(168,85,247,.45)]
+    drop-shadow-[0_0_80px_rgba(168,85,247,.55)]
     transition-transform
     duration-500
     hover:scale-105
