@@ -37,9 +37,9 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-20 mx-auto flex min-h-screen max-w-[1600px] items-center px-8 xl:px-16">
+      <div className="relative z-20 mx-auto flex min-h-screen max-w-[1600px] items-center px-6 pt-28 md:px-8 md:pt-0 xl:px-16">
         <div className="relative z-20 w-full lg:w-[45%]">
-          <p className="mb-6 hidden uppercase tracking-[8px] text-purple-400 md:block">
+          <p className="mb-6 h-6 uppercase tracking-[8px] text-purple-400 md:h-auto">
             Volleyball Development
           </p>
 
