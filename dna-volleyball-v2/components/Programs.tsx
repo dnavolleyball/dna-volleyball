@@ -8,10 +8,10 @@ const programs = [
     level: "Beginner",
     name: "DNA Nova",
     price: "$30",
-    ages: "Ages 12–14",
+    ages: "Ages 8–14",
     experience: "Little or no volleyball experience.",
     description:
-      "Foundation stage focused on movement quality, coordination, and core volleyball fundamentals.",
+      "The first stage of the DNA Athlete Pathway, focused on developing movement quality, coordination, confidence, and the core volleyball fundamentals that prepare athletes for future success",
     skills: [
       "Passing fundamentals",
       "Setting & volleying",
